@@ -1,76 +1,145 @@
-.table-container {
-  border: 1px solid #bbb;
-  width: 70%;
-  margin: 0 auto;
-  padding: 0px 30px 30px 30px;
-  border-radius: 10px;
+/* A fresh, light background for the entire page (assuming this isn't set elsewhere) */
+body {
+  background-color: #f4f7f6; /* Very light, cool gray/mint */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern font */
 }
+
+.table-container {
+  /* Updated border color and removed the dark border for a softer look */
+  border: 1px solid #cceeff; /* Light, cheerful blue border */
+  background-color: #ffffff; /* Crisp white background for the container */
+  width: 70%;
+  margin: 20px auto; /* Added some margin on top/bottom for better spacing */
+  padding: 0px 30px 30px 30px;
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
 .todo-title {
   text-align: center;
-  width: 100;
+  width: 100%; /* Changed from 100 to 100% */
+  color: #007bff; /* Vibrant blue for the title */
+  padding-top: 20px;
+  margin-bottom: 25px; /* Added spacing */
+  font-size: 2em; /* Larger, more prominent title */
+  font-weight: 600;
 }
 
 table {
-  font-family: arial, sans-serif;
+  font-family: inherit; /* Inherit from body for consistency */
   border-collapse: collapse;
   width: 100%;
 }
 
 td,
 th {
-  border: 1px solid #dddddd;
+  /* Changed border color to a very light gray for a cleaner look */
+  border: 1px solid #e0e0e0;
   text-align: left;
   padding: 15px;
+}
 
+th {
+  /* Header row styling */
+  background-color: #007bff; /* Primary vibrant blue */
+  color: white; /* White text for contrast */
+  font-weight: 600;
+  border-color: #007bff; /* Match border to background */
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  /* Soft, pale green for alternating rows (instead of plain gray) */
+  background-color: #e6f7f2;
 }
 
+tr:hover {
+  /* Subtle hover effect to highlight the row */
+  background-color: #d1e7ff; /* Slightly darker blue hover */
+  cursor: pointer;
+}
+
+/* --- Button Styling --- */
+
 .btn {
-  border: 1px solid #bbb;
-  padding: 4px 10px;
-  border-radius: 4px;
+  /* Primary Action Button Look */
+  border: none; /* Removed standard border */
+  padding: 8px 15px; /* Slightly more padding */
+  border-radius: 6px;
   text-decoration: none;
-  color: #000;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Smooth transition for hovers */
+  
+  /* Default button color (e.g., for 'View' or 'Edit') */
+  background-color: #007bff; /* Vibrant Blue */
+  color: #ffffff;
+}
+
+/* Specific styling for a 'Delete' or 'Danger' button if you use a separate class like .btn-delete */
+.btn.delete-action { 
+  background-color: #dc3545; /* Red for deletion */
+  color: white;
 }
 
 .btn:hover {
-  background-color: #ccc;
-  color: #555;
-  cursor: pointer;
+  /* Subtle dark shade on hover for feedback */
+  background-color: #0056b3; 
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.btn:active {
+  transform: translateY(1px); /* Little press down effect */
+}
+
+/* --- Form Styling (New/Update To-do) --- */
 
 .new-todo,
 .update-todo {
   max-width: 786px;
-  margin: auto;
+  margin: 30px auto; /* Better vertical spacing */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .form-group,
 .new-todo .form-group,
 .update-todo .form-group {
-  margin: 0.4em 0;
+  margin: 1em 0; /* More spacing for readability */
 }
 
 .form-group input[type="text"],
 .new-todo .form-group input[type="text"],
 .update-todo .form-group input[type="text"] {
   width: 100%;
-  padding: 0.6em 1em;
+  padding: 0.8em 1em; /* Increased padding */
   margin: 0.5em 0;
-  border: 1px solid #aaa;
-  font-family: "Barlow", sans-serif;
+  border: 1px solid #ced4da; /* Soft gray border */
+  font-family: inherit;
   font-size: 1em;
-  border-radius: 0.2em;
+  border-radius: 6px;
+  transition: border-color 0.3s;
 }
 
+.form-group input[type="text"]:focus,
+.new-todo .form-group input[type="text"]:focus,
+.update-todo .form-group input[type="text"]:focus {
+  border-color: #007bff; /* Highlight blue on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle blue glow */
+}
+
+/* --- Confirmation Dialog Styling --- */
+
 .confirm {
-  border: 1px solid #ddd;
+  border: 1px solid #a3c9e6; /* Soft blue border */
+  background-color: #eaf4ff; /* Very light blue background */
   width: 786px;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 30px 0px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  color: #333; /* Darker text for readability */
 }
